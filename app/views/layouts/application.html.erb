@@ -20,8 +20,11 @@
 	            <% end %>
           <div class="grid-page">
             <div class="header">
-                <% if current_user %>
-                <div><%= link_to "Home", user_path(current_user)%></div>
+                <% if current_user%>
+                  <div><%= link_to "Home", user_path(current_user)%></div>
+                  <% if current_user.username != "guest" %>
+                    <div><%= link_to "Edit Account", edit_user_path(current_user)%></div>
+                  <% end %>
                   <div><%=link_to "Logout", logout_path, method: :delete%></div>
                 <% end %>
 
