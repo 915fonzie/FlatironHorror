@@ -1,10 +1,10 @@
 
 <div><p><%= @storyline.header%></p></div>
 <% if @storyline.id < 10%>
-    <a href="/users/1/campaigns/1/storylines/<%=@storyline.option_1_id%>/" class="button">Option 1</a>
-    <a href="/users/1/campaigns/1/storylines/<%= @storyline.option_2_id%>/" class="button">Option 2</a>
+    <a href="/users/<%=@user.id%>/campaigns/1/storylines/<%=@storyline.option_1_id%>/" class="button">Option 1</a>
+    <a href="/users/<%=@user.id%>/campaigns/1/storylines/<%= @storyline.option_2_id%>/" class="button">Option 2</a>
 <% elsif @storyline.id == 15%> 
-    <<a href="/users/1/" class="button">Back to Main Menu</a>
+    <<a href="/users/<%=@user.id%>/" class="button">Back to Main Menu</a>
 <% else %>
-    <a href="/users/1/" class="button">Back to Main Menu</a>
+    <a href="/users/<%=@user.id%>/" class="button">Back to Main Menu</a>
 <%end%>

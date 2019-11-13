@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     end
 
     def new 
-        if @current_user
+        if current_user
             redirect_to user_path(@current_user)
         end
         @user = User.new
@@ -29,18 +29,18 @@ class UsersController < ApplicationController
     end
 
     def show 
-        if @current_user.id.to_s != params[:id]
+        if current_user.id.to_s != params[:id]
             flash[:notice] = "Sorry, you don't have access to that"
-            redirect_to user_path(@current_user)
+            redirect_to user_path(current_user)
         end
-        @user = @current_user
+        @user = current_user
         @campaign1 = Campaign.first
         @storyline1 = @campaign1.storylines.first
 
     end
 
     def edit
-        @user = @current_user
+        @user = current_user
         if @user.username == "guest"
             flash[:notice] = "Sorry, can't edit guest account"
             redirect_to user_path(@user)
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
     end
 
     def update
-        @user = @current_user
+        @user = current_user
         @user.update(user_params)
         if @user.valid?
             flash[:notice] = "Account updated successfully!"
@@ -64,7 +64,7 @@ class UsersController < ApplicationController
     end
 
     def destroy
-        @user = @current_user
+        @user = current_user
         @user.destroy
         redirect_to '/'
     end
