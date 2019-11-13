@@ -1,0 +1,86 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ .grid-page {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px auto 40px;
+}
+
+html, body {
+    background-color: black;
+    margin: 10px;
+    font-size: 1.75vw;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 2px;
+    margin: 0px;
+  }
+  
+p {
+    color: #96ceb4;
+    text-align: center;
+  }
+
+  
+  .grid-page > div {
+      color: black;
+      display: flex;
+      align-items: center;
+      padding: 0px 20px;
+  }
+  .container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    color: #ffeead;
+}
+
+.header {
+    grid-column: 1 / -1;
+    display: flex;
+    background-color: #96ceb4;
+}
+
+
+.header > div:nth-child(2) {
+    margin-left: auto;
+    padding: 20px 0px;
+}
+
+.content {
+    grid-column: 1 / -1;
+    background-color: #ffcc5c;
+}
+
+.footer {
+    grid-column: 1 / -1;
+    background-color: #88d8b0;
+}
+.button {
+    background-color: #1c87c9;
+    border: none;
+    color: white;
+    padding: 20px 34px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    }

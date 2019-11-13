@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  header: MyString
+  story_body: MyText
+  img_url: MyString
+  campaign_id: 
+
+two:
+  header: MyString
+  story_body: MyText
+  img_url: MyString
+  campaign_id: 
