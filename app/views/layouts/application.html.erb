@@ -12,17 +12,19 @@
   </head>
 
   <body>
-  	<% if notice %>
-      	    <%= notice %>
-	<% end %>
-	
-	<% if alert %>
-      	    <%= alert %>
-	<% end %>
+                <% if notice %>
+                <div><h4><%= notice %></h4></div>
+	            <% end %>
+	            <% if alert %>
+                <div><p><%= alert %></p></div>
+	            <% end %>
           <div class="grid-page">
             <div class="header">
-                <div>HOME</div>
-                <div><%=link_to "LOGIN", "/login"%></div>
+                <% if current_user %>
+                <div><%= link_to "Home", user_path(current_user)%></div>
+                  <div><%=link_to "Logout", logout_path, method: :delete%></div>
+                <% end %>
+
             </div>
             <div class="content">
 

@@ -5,7 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(first_name: "guest",last_name: "guest",username: "guest",password_digest: "1",campaign_1_finished: false, campaign_2_finished: false, campaign_3_finished: false)
+guest = User.new(first_name: "guest",last_name: "guest",username: "guest",campaign_1_finished: false, campaign_2_finished: false, campaign_3_finished: false)
+guest.password = "1"
+guest.save
 Campaign.create(description: "this is the first campaign")
 Storyline.create(header: "Enter",story_body: "this is the body",img_url: "",campaign_id: 1,option_1_id: 2,option_2_id:3)
 Storyline.create(header:"Door",story_body: "this is the body",img_url: "",campaign_id: 1,option_1_id: 10,option_2_id: 4)

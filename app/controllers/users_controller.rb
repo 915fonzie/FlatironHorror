@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :authorize, except: [:new, :create]
     def index
         @users = User.all
     end
@@ -13,6 +14,9 @@ class UsersController < ApplicationController
         if @user.save
             flash[:notice] = "Account created successfully!"
             redirect_to user_path(@user)
+        elsif @user.password != @user.password_confirmation
+            flash.now.alert = "Oops, couldn't create account. Please make sure that passwords are matching"
+            render :new
         else
             flash.now.alert = "Oops, couldn't create account. Please make sure you use a username that hasn't been used before"
             render :new
