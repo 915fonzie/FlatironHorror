@@ -1,5 +1,4 @@
 class StaticController < ApplicationController
-    layout false
     def index
 
     end
@@ -8,6 +7,6 @@ class StaticController < ApplicationController
     end
 
     def how
-
+        
     end
 end

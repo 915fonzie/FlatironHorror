@@ -1,1 +1,17 @@
-<h1>This is a test</h1>
+<div class="about-page-header">
+    <% if current_user %>
+        <%=link_to "Back", user_path(current_user), class: "nav-button" %>
+    <% else %>
+        <%=link_to "Back", root_path(), class: "nav-button" %>  
+    <% end %>
+</div>
+<div class="about-page-body">
+    <p>Hello and Welcome to my Mod 2 Project for Flatiron School! 
+    My name is Alfonso Pruneda and I'm working towards being a Web Developer/Software Engineer. 
+    For this project, I'm using Rails for the backend with sqlite3, and HTML with CSS for the frontend. 
+    I was able to come up with the idea for this project thanks to my friend Shawn. 
+    The theme of this website is comedy horror and I wanted to create 
+    a small web version of a pick-your-own-path story.
+    As you browse around through the stories, I hope you'll enjoy them.
+    </p>
+</div>

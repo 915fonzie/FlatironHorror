@@ -1,1 +1,14 @@
-<h1>this is another test</h1>
+<div class="how-page-header">
+    <% if current_user %>
+        <%=link_to "Back", user_path(current_user), class: "nav-button" %>
+    <% else %>
+        <%=link_to "Back", root_path(), class: "nav-button" %>  
+    <% end %>
+</div>
+<div class="how-page-body">
+    <p>The way that the stories work in this game, is that you want to survive by the time you reach the end.
+    Along the way you'll be choosing between two options and depending on what you chose, you'll either proceed,
+    or die in the story.
+    Thats it! Good Luck! :)
+    </p>
+</div>

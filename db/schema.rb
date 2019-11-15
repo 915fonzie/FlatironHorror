@@ -24,7 +24,9 @@ ActiveRecord::Schema.define(version: 2019_11_10_225643) do
     t.string "img_url"
     t.integer "campaign_id"
     t.integer "option_1_id"
+    t.string "option_1_text"
     t.integer "option_2_id"
+    t.string "option_2_text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

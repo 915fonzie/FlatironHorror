@@ -1,6 +1,11 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .grid-page {
     height: 100%;
     display: grid;
@@ -10,7 +15,7 @@
 }
 
 html, body {
-    background-color: black;
+    background-color: red;
     margin: 10px;
     font-size: 1.75vw;
     box-sizing: border-box;
@@ -20,11 +25,12 @@ html, body {
   }
   
 p {
-    color: #96ceb4;
+    color: red;
     text-align: center;
+    font-family: "Times New Roman";
   }
   h4 {
-    color: #96ceb4;
+    color: cyan;
     text-align: center;
     font-size: 1vw;
   }
@@ -54,7 +60,7 @@ img{
     display: flex;
     grid-column: 1 / -1;
     grid-row: 9 / -1;
-    justify-content: flex-end;
+    // justify-content: flex-end;
 }
 .create-user{
     margin: auto;
@@ -97,6 +103,32 @@ img{
     margin: auto;
 }
 
+.about-page-header{
+    grid-column: 1;
+    grid-row: 1;
+    margin: auto;
+    font-family: "NIGHTMARE PILLS";
+}
+
+.about-page-body{
+    grid-column: 2 / 10;
+    grid-row: 1 / 8;
+    margin: auto;
+}
+
+.how-page-header{
+    grid-column: 1;
+    grid-row: 1;
+    margin: auto;
+    font-family: "NIGHTMARE PILLS";
+}
+
+.how-page-body{
+    grid-column: 2 / 10;
+    grid-row: 1 / -1;
+    margin: auto;
+}
+
 .button {
     background-color: black;
     border-style: solid;
@@ -105,7 +137,7 @@ img{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 1.75vw;
+    font-size: 2vw;
     cursor: pointer;
     font-family: "NIGHTMARE PILLS";
     }
@@ -114,9 +146,9 @@ img{
     background-color: black;
     color: red;
     text-align: center;
-    text-decoration: none;
+    text-decoration: underline;
     display: inline-block;
-    font-size: 1.5vw;
+    font-size: 1.75vw;
     cursor: pointer;
     font-family: "NIGHTMARE PILLS";
 }

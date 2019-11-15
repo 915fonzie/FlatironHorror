@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+     margin: 0;
+     padding: 0;
+ }
  .grid-page {
     height: 100%;
     display: grid;
@@ -22,7 +27,7 @@
 }
 
 html, body {
-    background-color: white;
+    background-color: red;
     margin: 10px;
     font-size: 1.75vw;
     box-sizing: border-box;
@@ -30,13 +35,18 @@ html, body {
     padding: 2px;
     margin: 0px;
   }
+
+  h2{
+      color: red;
+  }
   
 p {
-    color: #96ceb4;
+    color: red;
     text-align: center;
+    font-family: "NIGHTMARE PILLS";
   }
   h4 {
-    color: #96ceb4;
+    color: cyan;
     text-align: center;
     font-size: 1vw;
   }
@@ -44,47 +54,10 @@ p {
 .header {
     grid-column: 1 / -1;
     display: flex;
-    background-color: #96ceb4;
+    background-color: black;
     align-items: center;
 }
 
-.content {
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    grid-column: 1 / -1;
-    background-color: gray;
-}
-
-.image{
-    grid-column: 1 / -1;
-    grid-row: 1 / 9;
-    margin: auto;
-}
-
-img{
-    width: 100%;
-    height: auto;
-    max-width: 100vw;
-}
-
-.home-buttons{
-    display: flex;
-    grid-column: 3 / 9;
-    grid-row: 9 / -1;
-    justify-content: flex-end;
-}
-.create-user{
-    margin: auto;
-}
-.login{
-    margin: auto;
-}
-
-.login-guest{
-    margin: auto;
-}
 .home {
     margin-left: start;
     padding: 0px 10px;
@@ -100,25 +73,114 @@ img{
     padding: 0px 10px;
 }
 
+.content {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-column: 1 / -1;
+    background-color: black;
+}
+
+.title{
+    grid-column: 1 / -1;
+    grid-row: 1;
+    margin: auto;
+    font-family: "NIGHTMARE PILLS";
+}
+
+.story-image{
+    grid-column: 1 / -1;
+    grid-row: 2 / 6;
+    margin: auto;
+}
+
+.story{
+    grid-column: 1 / -1;
+    grid-row: 6 / 8;
+    margin: auto;
+}
+
+.options{
+    grid-column: 1 / -1;
+    grid-row: 8 / -1;
+    margin: auto;
+}
+
 .footer {
     grid-column: 1 / -1;
-    background-color: #88d8b0;
+    background-color: black;
     display: flex;
     align-items: center;
     padding: 0px 10px;
 }
+
+.about {
+    margin: auto;
+}
+
+.how-to-play{
+    margin: auto;
+}
+
+.form{
+    color: red;
+    grid-column: 1 / 3;
+    grid-row: 1 / -1;
+    margin: auto;
+    font-family: "NIGHTMARE PILLS";
+    font-size: 2vw;
+    padding: 0px 50px;
+}
+
+.create-user{
+    margin: auto;
+    grid-column: 1 / -1;
+    grid-row: 1 / 3;
+    font-family: "NIGHTMARE PILLS";
+    font-size: 3vw;
+    color: red;
+}
+
 .button {
-    background-color: #1c87c9;
+    background-color: black;
     border-style: solid;
-    border-color: black;
+    border-color: red;
     border-width: medium;
-    color: white;
+    color: red;
     padding: 20px 34px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 1.15vw;
+    font-size: 1.75vw;
     margin: 4px 2px;
     cursor: pointer;
-    font-family: "Bookman Old Style";
+    font-family: "NIGHTMARE PILLS";
     }
+
+.nav-button{
+    background-color: black;
+    color: red;
+    text-align: center;
+    text-decoration: underline;
+    display: inline-block;
+    font-size: 1.75vw;
+    padding: 0px 20px;
+    cursor: pointer;
+    font-family: "NIGHTMARE PILLS";
+}
+
+.image{
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    display: flex;
+    justify-content: space-around;
+    /* padding: 0px 50px; */
+}
+img{
+    width: 100%;
+    height: auto;
+    max-width: 30vw;
+    margin: auto;
+}
+

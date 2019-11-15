@@ -1,2 +1,5 @@
 <% provide(:title, "User Home") %>
-<%=link_to "Campaign 1", user_campaign_storyline_path(@user, @campaign1, @storyline1)%><br>
+<div class = "image">
+   <%=link_to image_tag("https://i.imgur.com/owKlHDd.png"), user_campaign_storyline_path(@user, @campaign1, @storyline1)%>
+   <%=link_to image_tag("https://i.imgur.com/BfKILaY.png"), user_campaign_storyline_path(@user, @campaign2, @storyline2)%>
+ </div>

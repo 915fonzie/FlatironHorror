@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
     before_action :authorize, except: [:new, :create]
-    def index
-        @users = User.all
-    end
+
 
     def new 
         if current_user
@@ -38,7 +36,9 @@ class UsersController < ApplicationController
         end
         @user = current_user
         @campaign1 = Campaign.first
+        @campaign2 = Campaign.second
         @storyline1 = @campaign1.storylines.first
+        @storyline2 = @campaign2.storylines.find_by(id: 15)
 
     end
 
@@ -66,8 +66,11 @@ class UsersController < ApplicationController
         elsif @user.password != @user.password_confirmation
             flash.now.alert = "Oops, couldn't update account. Please make sure that passwords are matching"
             render :edit
-        else
+        elsif @user.errors.messages[:username] != []
             flash.now.alert = "Oops, couldn't update account. Please make sure you use a username that hasn't been used before"
+            render :edit
+        else
+            flash.now.alert = "Oops, couldn't update account. Please make sure you fill out the entire form"
             render :edit
         end
     end
