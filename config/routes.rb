@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
+  get '/about' => 'static#about'
+  get '/how-to-play' => 'static#how'
 
   resources :users do
     resources :campaigns do

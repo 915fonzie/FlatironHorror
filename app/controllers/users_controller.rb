@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     end
 
     def create 
-        @user = User.create(user_params)
+        @user = User.create(user_params(:first_name, :last_name, :username, :password, :password_confirmation))
 
         if @user.valid?
             @user.save
@@ -22,8 +22,11 @@ class UsersController < ApplicationController
         elsif @user.password != @user.password_confirmation
             flash.now.alert = "Oops, couldn't create account. Please make sure that passwords are matching"
             render :new
-        else
+        elsif @user.errors.messages[:username] != []
             flash.now.alert = "Oops, couldn't create account. Please make sure you use a username that hasn't been used before"
+            render :new
+        else
+            flash.now.alert = "Oops, couldn't create account. Please make sure you fill out the entire form"
             render :new
         end
     end
@@ -40,16 +43,22 @@ class UsersController < ApplicationController
     end
 
     def edit
+        if current_user.id.to_s != params[:id]
+            flash[:notice] = "Sorry, you don't have access to that"
+            redirect_to user_path(current_user)
+        end
+        
         @user = current_user
+
         if @user.username == "guest"
-            flash[:notice] = "Sorry, can't edit guest account"
+            flash[:notice] = "Sorry, can't edit guest account that account"
             redirect_to user_path(@user)
         end
     end
 
     def update
         @user = current_user
-        @user.update(user_params)
+        @user.update(user_params(:first_name, :last_name, :username, :password, :password_confirmation))
         if @user.valid?
             flash[:notice] = "Account updated successfully!"
             session[:user_id] = @user.id.to_s
@@ -71,7 +80,7 @@ class UsersController < ApplicationController
 
     private
 
-    def user_params
-        params.require(:user).permit(:first_name, :last_name, :username, :password, :password_confirmation)
+    def user_params(*args)
+        params.require(:user).permit(*args)
     end
 end

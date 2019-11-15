@@ -1,4 +1,4 @@
-
+<% provide(:title, "Campaign") %>
 <div><p><%= @storyline.header%></p></div>
 <% if @storyline.id < 10%>
     <a href="/users/<%=@user.id%>/campaigns/1/storylines/<%=@storyline.option_1_id%>/" class="button">Option 1</a>

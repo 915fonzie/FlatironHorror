@@ -1,6 +1,13 @@
 class StaticController < ApplicationController
+    layout false
+    def index
 
-    def index 
+    end
+    def about
+
+    end
+
+    def how
 
     end
 end
