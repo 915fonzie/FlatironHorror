@@ -1,7 +1,6 @@
 class StorylinesController < ApplicationController
     before_action :authorize
-    layout "application"
-    
+
     def show
         if params[:user_id] != current_user.id.to_s
             flash[:notice] = "Sorry, you're not allowed to do that"
