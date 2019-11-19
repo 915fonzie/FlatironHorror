@@ -2,7 +2,11 @@
 <html>
   <head>
     <title>Flatiron Horror</title>
-    <link rel="stylesheet" href="/assets/welcome.scss">
+        <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'static', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="/assets/static.scss">
   </head>
 
   <body>
