@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
     before_action :authorize, except: [:new, :create]
 
+    layout "application"
+
 
     def new 
         if current_user

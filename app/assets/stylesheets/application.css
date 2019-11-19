@@ -13,11 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
- * {
-     margin: 0;
-     padding: 0;
- }
  .grid-page {
     height: 100%;
     display: grid;
